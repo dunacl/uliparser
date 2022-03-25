@@ -56,7 +56,7 @@ func main() {
 	f, _ := os.Create("gin.log")
 
 	// MC
-	Mc := memcache.New("192.168.0.6:11211")
+	Mc := memcache.New(os.Getenv("MEMCACHED_SERVER"))
 
 	gin.DefaultWriter = io.MultiWriter(f)
 	// By default gin.DefaultWriter = os.Stdout
